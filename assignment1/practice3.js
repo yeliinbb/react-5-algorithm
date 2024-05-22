@@ -15,7 +15,21 @@
 // 출력: false
 
 function isAnagram(a, b) {
-  // 코드작성공간
+  // 공백을 무시하고, 모두 소문자/대문자인 문자열로 변환 후 쪼개 각각의 배열로 변환
+  const arrA = a.toLowerCase().split(" ").join("").split("");
+  const arrB = b.toLowerCase().split(" ").join("").split("");
+
+  // 배열 유니코드 순 정렬 후 다시 문자열로 변환
+  const strA = arrA.sort().join("");
+  const strB = arrB.sort().join("");
+
+  // 문자열 일치하는지 조건 확인
+  let answer = true;
+  return strA === strB ? answer : !answer;
+
+  // 배열을 순회하면서 두 배열을 비교하면서 true인 조건 확인
+  // (1) 배열의 길이가 같아야함. / 같지 않다면 조건문 종료
+  // (2) 두 배열의 모든 요소가 일치 -> 배열 요소 유니코드 순 정렬
 }
 
 // 테스트 코드

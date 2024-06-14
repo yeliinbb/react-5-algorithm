@@ -20,7 +20,17 @@
 // 출력: 3
 // 설명: F(4) = F(3) + F(2) = 2 + 1 = 3.
 
-function fibonacci(n) {}
+function fibonacci(n) {
+  // 피보나치 수열(Fibonacci sequence)은 각 숫자가 앞의 두 숫자의 합으로 정의되는 수열
+  // 기본 부분 : 0일 때는 0, 1일 때는 1 반환
+  // 재귀 부분 : 숫자 n의 n번째 피보나치 수 -> F(n) = F(n-1) + F(n-2)
+  if (n === 0) {
+    return 0;
+  } else if (n === 1) {
+    return 1;
+  }
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
 
 // 테스트 코드
 function testFibonacci() {

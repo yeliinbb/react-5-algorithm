@@ -15,7 +15,14 @@
 // 출력: "noisrucer"
 // 설명: "recursion"을 뒤집으면 "noisrucer"가 됩니다.
 
-function reverseString(str) {}
+function reverseString(str) {
+  // 기본 부분: 문자열의 길이가 0이거나 1이면 문자열 그대로 반환
+  if (str.length === 0 || str.length === 1) {
+    return str;
+  }
+  // 재귀 부분: 첫번째 문자열만 빼고 나머지 문자열을 반환하여 순서 뒤집어주기
+  return reverseString(str.slice(1)) + str[0];
+}
 
 // 테스트 코드
 function testReverseString() {

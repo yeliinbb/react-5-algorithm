@@ -18,7 +18,15 @@
 // 출력: 24
 // 설명: 4! = 4 * 3 * 2 * 1 = 24
 
-function factorial(n) {}
+function factorial(n) {
+  // 팩토리얼은 1부터 n까지의 모든 자연수를 곱한 값
+  // 기본 부분 : 0이거나 1인 경우 1을 반환
+  // 재귀 부분 : n이 1보다 크면 n * n-1
+  if (n === 1 || n === 0) {
+    return 1;
+  }
+  return factorial(n - 1) * n;
+}
 
 // 테스트 코드
 function testFactorial() {
